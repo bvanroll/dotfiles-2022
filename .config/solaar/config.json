@@ -1,0 +1,15 @@
+{
+  "4093:E8853A92": {
+    "_modelId": "4093C0940000",
+    "_name": "PRO X Wireless",
+    "_sensitive": {
+      "dpi": false,
+      "report_rate": false
+    },
+    "_serial": "E8853A92",
+    "_unitId": "E8853A92",
+    "dpi": "400",
+    "report_rate": 1
+  },
+  "_version": "1.1.1"
+}
