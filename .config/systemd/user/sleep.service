@@ -1,0 +1,9 @@
+[Unit]
+Description=Sleep Manager
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/xautolock -time 10 -locker "i3exit suspend" -detectsleep
+
+[Install]
+WantedBy=xsession.target
