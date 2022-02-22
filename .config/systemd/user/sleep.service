@@ -4,7 +4,7 @@ PartOf=graphical-session.target
 
 [Service]
 #ExecStart=/usr/bin/xautolock -time 10 -locker "i3exit suspend" -detectsleep
-ExecStart=/usr/bin/swayidle -w timeout 300 'swaylock -f -c 262626' timeout 600 'systemctl suspend' before-sleep 'swaylock -f -c 262626'
+ExecStart=/usr/bin/swayidle -w timeout 300 'swaylock -f -c 262626' timeout 600 'systemctl suspend' before-sleep 'swaylock -f -i /home/beppe/Pictures/wallhaven-y8w1zg.jpg'
 Environment=WAYLAND_DISPLAY=wayland-1
 
 [Install]
