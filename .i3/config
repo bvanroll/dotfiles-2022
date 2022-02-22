@@ -29,6 +29,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+
+# Replay sorcery saves replays like shadowplay baybee
 bindsym $mod+Shift+s exec replay-sorcery save
 
 # kill focused window
