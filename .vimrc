@@ -16,7 +16,8 @@ set laststatus=2
 set ruler
 set wildmenu
 "set colorscheme wombat256mod
-set cursorline
+"set cursorline
+set number
 set relativenumber
 set mouse=a
 set title
