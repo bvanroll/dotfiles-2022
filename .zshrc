@@ -109,4 +109,5 @@ alias hit="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 #Vars
 
 export PATH=$PATH:/usr/local/sbin
-export RADV_DEBUG=llvm
+#export RADV_DEBUG=llvm
+
