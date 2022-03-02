@@ -28,6 +28,7 @@ set confirm
 set history=1000
 set noswapfile
 set nrformats-=octal
+set path+=** "allows for tab completion for all file related tasks
 "set shell
 
 
