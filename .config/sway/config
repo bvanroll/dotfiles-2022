@@ -43,7 +43,7 @@ bindsym $mod+q kill
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
 
-bindsym $mod+space exec --no-startup-id wofi --show run
+bindsym $mod+space exec --no-startup-id sleep 0.1 &&  rofi --show run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -376,14 +376,14 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+        background #000000
+        statusline #FFFFFF
+        separator  #FFFFFF
 
 #                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
+        focused_workspace  #FFFFFF #FFFFFF #000000
+        active_workspace   #FFFFFF #FFFFFF #000000
+        inactive_workspace #000000 #000000 #FFFFFF
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
@@ -407,7 +407,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
+gaps inner 1
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
