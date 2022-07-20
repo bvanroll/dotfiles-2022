@@ -11,8 +11,8 @@ set $secondaryBg /home/beppe/Pictures/nebula.jpg
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 1
+default_floating_border pixel 1
 # Hide borders
 hide_edge_borders none
 
@@ -411,13 +411,22 @@ bar {
 # hide/unhide i3status bar
 #bindsym $mod+m bar mode toggle
 
+#colors
+set $black #01161e
+set $dblue #124559
+set $lblue #598392
+set $dgrey #aec3b0
+set $grey #eff6e0
+set $white #FFFFFF
+
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.focused          $dgrey $black $white $dgrey $dgrey
+  client.focused_inactive $dblue $black $grey $dblue $dblue
+  client.unfocused        $dblue $black $grey $dblue $dblue
+  client.urgent           $lblue $black $grey $lblue $lblue
+  client.placeholder      $dblue $black $grey $dblue $dblue
 
   client.background       #2B2C2B
 
@@ -480,18 +489,8 @@ mode "$mode_gaps_outer" {
 
 
 
-#colors
-set $black #01161e
-set $dblue #124559
-set $lblue #598392
-set $dgrey #aec3b0
-set $grey #eff6e0
-set $white #FFFFFF
-
 
 #Theme
-client.background $black $black #FFFFFF #FFFFFF #FFFFFF
-client.focused $dblue $black $white $lblue $lblue
 
 exec solaar --restart-on-wakeup -w hide 
 exec systemctl start sleep --user
