@@ -1,20 +1,18 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 
-set $mainBg /home/beppe/Pictures/wallhaven-y8k5j7.png
-set $secondaryBg /home/beppe/Pictures/wallhaven-y8k5j7.png 
+set $mainBg /home/beppe/Pictures/nebula.jpg
+set $secondaryBg /home/beppe/Pictures/nebula.jpg
 #set $lockBg /home/beppe/Pictures/wallhaven-y8w1zg.jpg
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border normal
-
+default_border pixel 3
+default_floating_border pixel 3
 # Hide borders
 hide_edge_borders none
 
@@ -35,15 +33,15 @@ bindsym $mod+Return exec kitty
 
 
 # Replay sorcery saves replays like shadowplay baybee
-bindsym $mod+Shift+s exec replay-sorcery save
+#bindsym $mod+Shift+s exec replay-sorcery save
 
 # kill focused window
 bindsym $mod+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+space exec wofi --show run --no-startup-id 
 
-bindsym $mod+space exec --no-startup-id sleep 0.1 &&  rofi --show run
+#bindsym $mod+space exec --no-startup-id sleep 0.1 &&  rofi --show run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -77,16 +75,16 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+#bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse no
 
 # change focus
-#bindsym $mod+y focus left
-#bindsym $mod+n focus down
-#bindsym $mod+e focus up
-#bindsym $mod+o focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 #bindsym $mod+Tab focus right
 #bindsym $mod+Shift+Tab
@@ -100,10 +98,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+y move left
-#bindsym $mod+Shift+n move down
-#bindsym $mod+Shift+e move up
-#bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -272,10 +270,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym y resize shrink width 5 px or 5 ppt
-        bindsym n resize grow height 5 px or 5 ppt
-        bindsym e resize shrink height 5 px or 5 ppt
-        bindsym o resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -291,10 +289,10 @@ mode "resize" {
 bindsym $mod+Shift+r mode "move"
 mode "move" {
 
-    bindsym y move left
-    bindsym n move down
-    bindsym e move up
-    bindsym o move right
+    bindsym h move left
+    bindsym j move down
+    bindsym k move up
+    bindsym l move right
 
     bindsym Left move left
     bindsym Down move down
@@ -359,38 +357,59 @@ exec_always --no-startup-id fix_xcursor
 #set_from_resource $term_color14    color14
 #set_from_resource $term_color15    color15
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+
+
+
+
+
+
+
+
+
+
+
+
+
 bar {
-    #swaybar_command waybar
-	#i3bar_command i3bar
-	status_command i3status
-	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-        background #000000
-        statusline #FFFFFF
-        separator  #FFFFFF
-
-#                      border  backgr. text
-        focused_workspace  #FFFFFF #FFFFFF #000000
-        active_workspace   #FFFFFF #FFFFFF #000000
-        inactive_workspace #000000 #000000 #FFFFFF
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
+  position top
+  swaybar_command waybar
 }
 
+
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#bar {
+#    swaybar_command waybar
+#	#i3bar_command i3bar
+##	status_command i3status
+#	position top
+#
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+##	tray_output primary
+##	tray_output eDP1
+#
+#	bindsym button4 nop
+#	bindsym button5 nop
+##   font xft:URWGothic-Book 11
+#	strip_workspace_numbers yes
+#
+#    colors {
+#        background #000000
+#        statusline #FFFFFF
+#        separator  #FFFFFF
+#
+##                      border  backgr. text
+#        focused_workspace  #FFFFFF #FFFFFF #000000
+#        active_workspace   #FFFFFF #FFFFFF #000000
+#        inactive_workspace #000000 #000000 #FFFFFF
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
+#
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+#bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -407,8 +426,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 1
-gaps outer -2
+gaps inner 10
+gaps outer 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -416,11 +435,11 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+smart_gaps off
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+smart_borders off
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -459,11 +478,26 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+
+
+#colors
+set $black #01161e
+set $dblue #124559
+set $lblue #598392
+set $dgrey #aec3b0
+set $grey #eff6e0
+set $white #FFFFFF
+
+
+#Theme
+client.background $black $black #FFFFFF #FFFFFF #FFFFFF
+client.focused $dblue $black $white $lblue $lblue
+
 exec solaar --restart-on-wakeup -w hide 
 exec systemctl start sleep --user
-
-
-output DP-1 bg $mainBg fit 
-output HDMI-A-1 bg $secondaryBg fit
+#exec swaybg -i /home/beppe/Pictures/nebula.jpg -m fill
+#exec swaymsg output "*" bg /home/beppe/Pictures/nebula.jpg -m fill
+output DP-2 bg $mainBg fill
+output HDMI-A-1 bg $secondaryBg fill
 
 
